@@ -27,26 +27,26 @@ class Risba():
         self.ax.text(v[0]/2, v[1]/2, v[2]/2, ime)
     def pvektor(self,z,v, ime='', barva = 'blue'):
         self.ax.quiver(z[0], z[1], z[2],v[0], v[1], v[2],color=barva)
-        self.ax.text(z[0]+v[0]/2, z[1]+v[1]/2, z[0]+v[2]/2, ime)
+        self.ax.text(z[0]+v[0]/2, z[1]+v[1]/2, z[2]+v[2]/2, ime)
 
 if __name__ == "__main__":
     #Naredimo objekt Risba, parameter je 
     #velikost od -4 do 4 po x, y in z.
     #default je 3
-    x = Risba(4)
+    r = Risba(4)
     #Nariše bazne vektorje x, y in z
-    x.baza()
+    r.baza()
     #Nekaj vektorjev
     a = (1,2,3)
     b = (-2,-1,3)
     n = (-1,1,6)
     #Krajvni vektorji,
     #ime in barvo lahko spustimo
-    x.vektor(a,'a','green')
-    x.vektor(n,'n','black')
+    r.vektor(a,'a','green')
+    r.vektor(n,'n','black')
     #vektor se začne v točki a
-    x.pvektor(a,b,'b','blue')
-    x.prikaži()
+    r.pvektor(a,b,'b','blue')
+    r.prikaži()
     
 
 

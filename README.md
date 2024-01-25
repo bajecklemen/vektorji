@@ -1,21 +1,17 @@
 # Vektorji
-To sta modula za risanje vektorjev z mathplotlib in osnovne funkcije z vektorji.
+To sta modula za risanje vektorjev z mathplotlib in osnovne funkcije za delo z vektorji.
 ## vektorji
-
 Vektor je predstavljen z n-terko (tuple) npr. `(1,0,2)`. Vektor si lahko predstavljamo kot krajevni vektor ali točko v prostoru.
-Opis modula:
 ```
-NAME
-    vektorji
-
-DESCRIPTION
-    Funkcije za delo z vektorji
-    Vektor je predstavljen z n-terko (tuple) npr. (1,0,2)
-    Vektor je krajevni vektor ali točka v prostoru.
-
 FUNCTIONS
     dolzina(x)
         Dolžina vektorja
+    
+    kolinearne(X, Y, Z)
+        Ali so točke kolinearne
+    
+    komplanarne(x, y, z, w)
+        Funkcija preveri če so 4 točke komplanarne = ležijo v ravnini
     
     kot_med(x, y)
         Kot med vektorjema x in y
@@ -42,31 +38,37 @@ FUNCTIONS
     vxs(x, s)
         vektor x krat skalar s
 ```
-
 ## Risanje
-
 Za delovanje je potreben modul matplotlib.
 ```
 pip install matplotlib
 ```
-### Uporaba
+Naredimo objekt Risba(n), parameter je velikost slike od -n do n po x, y in z. Default vrednost je 3
 ```
-#Naredimo objekt Risba, parameter je 
-#velikost od -4 do 4 po x, y in z.
-#default je 3
-x = Risba(4)
-#Nariše bazne vektorje x, y in z
-x.baza()
-#Nekaj vektorjev
+r = Risba(4)
+```
+Če želimo na sloko dodati bazne enotske vektorje x, y in z:
+```
+r.baza()
+```
+Definirajmo nekaj krajevnih vektorjev:
+```
 a = (1,2,3)
 b = (-2,-1,3)
 n = (-1,1,6)
-#Krajvni vektorji,
-#ime in barvo lahko spustimo
-x.vektor(a,'a','green')
-x.vektor(n,'n','black')
-#vektor se začne v točki a
-x.pvektor(a,b,'b','blue')
-x.prikaži()
+```
+Vektorje na sliko dodamo tako:
+```
+r.vektor(a,'a','green')
+r.vektor(n,'n','black')
+```
+Drugi parameter je oznaka vektorja, ki se prikaže na sliki in ni obvezen
+Tretji parameter je barva, ni obvezen, default je 'blue'
+```
+r.pvektor(a,b,'b','blue')
+```
+Metoda pvektor nariše vektor b premaknjen za vektor a
+```
+r.prikaži()
 ```
 
