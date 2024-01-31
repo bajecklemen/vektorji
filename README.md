@@ -37,6 +37,9 @@ FUNCTIONS
     
     vxs(x, s)
         vektor x krat skalar s
+		
+	linkomb(a,b,c,x):
+		funkcija vrne linearno kombinacijo oblike x=m*a+n*b+p*c, kjer so a, b in c bazni vektorji, x pa vektor, ki ga izražamo. funkcija je definirana kot linkomb(a,b,c,x)'''
 ```
 ## Risanje
 Za delovanje je potreben modul matplotlib.
