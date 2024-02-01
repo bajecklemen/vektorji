@@ -118,9 +118,27 @@ def linkomb(a,b,c,x):
                             return (round(n,4),round(m,4),round(p,4))
                         except:
                             print('to ni mogoce - preveri, ali sta katera izmed baznih vektorjev kolinearna, ali pa je kakšen enak nicelnemu vektorju', a, b, c)
+def det(M):
+    '''Vrne determinantto matrike 3x3'''
+    a = M[0][0]*M[1][1]*M[2][2]
+    b = M[0][1]*M[1][2]*M[2][0]
+    c = M[1][0]*M[2][1]*M[0][2]
+    d = M[0][2]*M[1][1]*M[2][0]
+    e = M[0][1]*M[1][0]*M[2][2]
+    f = M[0][0]*M[1][2]*M[2][1]
+    return a+b+c-d-e-f
+
+def lin_komb(a,b,c,x):
+    '''funkcija vrne linearno kombinacijo oblike x=m*a+n*b+p*c'''
+    D = det((a,b,c))
+    if D == 0:
+        return None
+    else:
+        return (det((x,b,c))/D, det((a,x,c))/D, det((a,b,x))/D)
 
 if __name__ == '__main__':
     print('Modul vektorji')
+    
     
     
     
