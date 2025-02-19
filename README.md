@@ -2,6 +2,7 @@
 To sta modula za risanje vektorjev z mathplotlib in osnovne funkcije za delo z vektorji.
 ## vektorji
 Vektor je predstavljen z n-terko (tuple) npr. `(1,0,2)`. Vektor si lahko predstavljamo kot krajevni vektor ali točko v prostoru.
+...
 ```
 FUNCTIONS
     dolzina(x)
